@@ -1,0 +1,330 @@
+
+/* général */
+
+body  {
+	font-family: 'Roboto Condensed', "Comic sans MS", sans-serif;
+	color: #4A5452;
+}
+
+ul {
+	list-style-type: square ;
+}
+ul li {
+	color : #445994;
+}
+ul li span {
+	color: #4A5452;
+}
+
+
+
+/* entête */
+
+.barreSup {
+	height: 90px;
+}
+
+.navbar-header img {
+	height:83px;
+	width: 215px;
+}
+.logo{
+	padding-top: 5px;
+}
+
+.ombre{
+	box-shadow: 0 2px 5px 0px rgba(0,0,0,0.3);
+}
+
+	/* texte*/
+
+.entête {
+	margin-top:25px;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: #4A5452;
+	font-size: 1.2em;
+	/*font-weight: bold;*/
+	text-decoration: none;
+	/*transition-property:  text-decoration ;
+	transition : all 1s ;*/
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+	color: #445994 ;
+	/*text-decoration: underline;*/
+	/*transition-property:  text-decoration ;
+	transition : all 1s ;
+*/	
+}
+
+/* code trouvé sur internet */
+
+/*li{display:inline-block;min-width:50px;}*/
+li a {
+    text-decoration:none;
+    line-height: 70px;
+    padding: 0 10px;
+    text-align: center;
+    font-size: 1.3em;
+    color: #445994;
+    text-transform: uppercase;
+}
+li a:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 1px;
+    width: 0;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+}
+li a:hover:after {
+    width: 90%;
+    background: #445994;
+}
+
+
+/*CORPS*/
+
+/* défilement des slides */
+
+.défilement {
+	background-color: rgba(0,0,0,0.7);
+	height: 596px ;
+	margin-top: 90px;
+	padding-right: 0px;
+	padding-left: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	width: 100%;
+}
+
+.positionSlides {
+	margin-top: 134px;
+}
+
+.slides {
+	margin-top: 138px;
+	margin-bottom: 48px;
+	width: 1519px;
+	height: 500px;
+	
+}
+.slider {
+	width:1519px;
+	height:638px;
+	padding:0;
+	position:relative;
+	margin-top: 20px;
+	margin-bottom: -120px;
+	overflow:hidden;
+}
+
+#slider-list{
+
+
+	list-style-type:none;
+	display:flex;
+	margin:0;
+	margin-left: 0px;
+	position:absolute;
+	top:0;
+	padding:0;
+
+	animation-name: AutoSlide;
+	animation-duration: 20s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;}
+
+@keyframes AutoSlide {
+	0% {left: 0px;}
+	20% {left: 0px;}
+	30% {left: -1519px;}
+	55% {left: -1519px;}
+	65% {left: -3038px;}
+	90% {left: -3038px;}
+	100% {left: 0px;}
+}
+
+.écritureSurSlider{
+	padding-bottom: 300px;
+}
+
+.textSurSlider{
+	background-image: url(images/bandeSombre.png);
+	color: white;
+	font-size: 2.2em;
+}
+
+.textSurBandeau{
+	color: white;
+	font-size: 2.2em;
+}
+
+.bandeau{
+	margin-right: 0px;
+}
+
+.imageAtelier {
+	width : 100%;
+	height: 300px;
+	background-image: url(images/Atelier/bandeau.png);
+}
+
+.imageQSN{
+	width : 100%;
+	height: 300px;
+	background-image: url(images/QSN/QuiSommeNous.jpg);
+}
+
+.imageContact{
+	width : 100%;
+	height: 300px;
+	background-image: url(images/slide3.jpg);
+}
+
+.iconBandeau{
+	margin-top : -160px;
+	color :#445994 ;
+	height: 139px;
+}
+
+/* taille de l'icon sur les bandeaux*/
+.fa { 
+	font-size: 4.6em !important;
+}
+
+.margeQSN {
+	margin-top: 93px;
+	margin-bottom: 94px;
+}
+
+/* les préstations */
+
+.casePrestation {
+	margin-top : 80px;
+	padding: 40px 5px;
+}
+
+.écritureTransparenteCasePrestation {
+	color : transparent;
+}
+
+.écritureCasePrestation {
+	text-align: center;
+	font-size: 1.8em;
+	color : white;
+}
+
+.titreCasePrestation{
+	background-image: url(images/bandeSombre.png);
+	padding-top : 80px;	
+}
+.paragrapheCasePrestation{
+	background-image: url(images/bandeSombre.png);
+	font-size: 0.55em;
+	margin-top: 55px;
+}
+
+.listePrestations {
+	color : white ;
+}
+
+.prestation1 {
+	width : 100%;
+	height: 550px;
+	background-image: url(images/slide3.jpg);
+	overflow:hidden;
+}
+
+.prestation2 {
+	width : 100%;
+	height: 550px;
+	background-image: url(images/BacsEtFacades/photoPrestation.png);
+	overflow:hidden;
+}
+
+.prestation3 {
+	width : 100%;
+	height: 550px;
+	background-image: url(images/slide1.jpg);
+	overflow:hidden;
+}
+
+.prestation4 {
+	width : 100%;
+	height: 550px;
+	background-image: url(images/slide2.jpg);
+	overflow:hidden;
+}
+
+
+/* les informations importantes*/
+
+.sepSection {
+	margin-top:40px;
+	margin-bottom: 20px;
+}
+
+.separateur {
+    padding-top: 6px;
+    border-top: solid #445994 1px;
+    margin-top: 17px;
+}
+
+.nomSection {
+	text-align: center;
+	font-size: 1.8em;
+	color : #445994 ;
+}
+
+/* les réalisations */
+
+.grille {
+	padding:5px;
+	margin:6px;
+	border-radius:6px;
+	background-color: white;
+	box-shadow:0px 2px 10px rgba(23, 45, 69, 0.25);
+}
+
+.imageTB{
+	width : 100%;
+}
+.textTB{
+	font-size: 1.2em;
+}
+
+/*footer*/
+
+footer {
+	width: 100%;
+	height: 60px;
+	background-color: #445994 ;
+
+}
+
+footer span {
+	color : white;
+	padding-top: 20px;
+}
+
+footer .footerNoms {
+	color : black;
+}
+
+footer a {
+	color : black;
+}
+footer a:hover {
+	color : white;
+}
+
+.flècheRemonté {
+	margin-top : 10px;
+	overflow: hidden;
+}
+
+
