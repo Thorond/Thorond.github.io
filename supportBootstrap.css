@@ -4,10 +4,12 @@
 body  {
 	font-family: 'Roboto Condensed', "Comic sans MS", sans-serif;
 	color: #4A5452;
+	text-align: justify ;
 }
 
 ul {
 	list-style-type: square ;
+	padding-left: 15px;
 }
 ul li {
 	color : #445994;
@@ -204,8 +206,8 @@ li a:hover:after {
 /* les préstations */
 
 .casePrestation {
-	margin-top : 80px;
-	padding: 40px 5px;
+	margin-top : 10px;
+	padding: 25px 5px;
 }
 
 .écritureTransparenteCasePrestation {
@@ -268,6 +270,16 @@ li a:hover:after {
 	margin-bottom: 20px;
 }
 
+.sepSectionIndex {
+	margin-top:80px;
+	margin-bottom: 60px;
+}
+
+.sepSectionPres {
+	margin-top:130px;
+	margin-bottom: 10px;
+}
+
 .separateur {
     padding-top: 6px;
     border-top: solid #445994 1px;
@@ -285,6 +297,7 @@ li a:hover:after {
 .grille {
 	padding:5px;
 	margin:6px;
+	margin-bottom: 30px;
 	border-radius:6px;
 	background-color: white;
 	box-shadow:0px 2px 10px rgba(23, 45, 69, 0.25);
