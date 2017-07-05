@@ -3,7 +3,7 @@ var resolutionClient = document.body.clientWidth;
 var body = document.body ;
 
 
-if ( resolutionClient > 975 ){
+if ( resolutionClient > 1000 ){
 	for ( j = 0 ; j < prestations.length ; j++ ) { 
 		var temp = prestations[j].querySelector("ul");
 		if ( temp !== null ) {
@@ -63,7 +63,7 @@ function mettreEcriture ( pres) {
 }
 
 function écritureSelonRésolution () {
-	if ( resolutionClient > 975 ){
+	if ( resolutionClient > 1000 ){
 		enleverEcriture(prestations);
 		prestations[0].classList.remove("col-md-1"); 
 	    prestations[0].classList.add("col-md-4");
