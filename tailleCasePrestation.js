@@ -3,7 +3,7 @@ var resolutionClient = document.body.clientWidth;
 var body = document.body ;
 
 
-if ( resolutionClient > 974 ){
+if ( resolutionClient > 975 ){
 	for ( j = 0 ; j < prestations.length ; j++ ) { 
 		var temp = prestations[j].querySelector("ul");
 		if ( temp !== null ) {
@@ -18,28 +18,10 @@ if ( resolutionClient > 974 ){
 	}
 
 	for ( i = 0 ; i < prestations.length ; i++ ) { 
-	    prestations[i].addEventListener("mouseover",function() { 
-
-	    	enleverEcriture(prestations);
-	    	
-	        this.classList.remove("col-md-1"); 
-	        this.classList.add("col-md-4");
-	    	this.classList.add("écritureCasePrestation") ;
-	    	this.classList.remove("écritureTransparenteCasePrestation") ;
-	    	this.querySelector(".paragraphe").classList.add("paragrapheCasePrestation");
-	    	var temp = this.querySelector("ul");
-			if ( temp !== null ) {
-				temp.style.listStyleType = "square";
-			}
-	    	temp = this.querySelectorAll(".listePrestations");
-			if ( temp !== null ) {
-				for ( k = 0 ; k < temp.length ; k++) { temp[k].style.color = "white";}
-			}
-	    });
+	    prestations[i].addEventListener("mouseover", affichageDeLaPrestation );
 	}
 } else {
 	mettreEcriture(prestations);
-	
 }
 
 function enleverEcriture (pres) {
@@ -81,12 +63,36 @@ function mettreEcriture ( pres) {
 }
 
 function écritureSelonRésolution () {
-	if ( resolutionClient > 974 ){
+	if ( resolutionClient > 975 ){
 		enleverEcriture(prestations);
 		prestations[0].classList.remove("col-md-1"); 
 	    prestations[0].classList.add("col-md-4");
+	    for ( i = 0 ; i < prestations.length ; i++ ) { 
+		    prestations[i].addEventListener("mouseover", affichageDeLaPrestation );
+		}
 	} else {
-		mettreEcriture(prestations)
+		mettreEcriture(prestations);
+		for ( i = 0 ; i < prestations.length ; i++ ) { 
+		    prestations[i].removeEventListener("mouseover", affichageDeLaPrestation );
+		}
+	}
+}
+
+function affichageDeLaPrestation(){
+	enleverEcriture(prestations);
+	    	
+    this.classList.remove("col-md-1"); 
+    this.classList.add("col-md-4");
+	this.classList.add("écritureCasePrestation") ;
+	this.classList.remove("écritureTransparenteCasePrestation") ;
+	this.querySelector(".paragraphe").classList.add("paragrapheCasePrestation");
+	var temp = this.querySelector("ul");
+	if ( temp !== null ) {
+		temp.style.listStyleType = "square";
+	}
+	temp = this.querySelectorAll(".listePrestations");
+	if ( temp !== null ) {
+		for ( k = 0 ; k < temp.length ; k++) { temp[k].style.color = "white";}
 	}
 }
 
