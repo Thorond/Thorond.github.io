@@ -24,6 +24,11 @@ ul li span {
 }
 */
 
+.navbar-default .navbar-collapse {
+	background-color: #f8f8f8;
+	margin-top: 34px;
+}
+
 /* entête */
 
 .barreSup {
