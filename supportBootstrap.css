@@ -346,6 +346,27 @@ li a:hover:after {
 	-moz-opacity:.60;
 	opacity:.60;*/
 	z-index: 1031;
+	overflow: hidden;
+}
+
+.flèchesAgrandissementGauche {
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:0px; 
+	/* 38 w et 50 h*/
+	width:0px;
+	z-index: 1033;
+	overflow: hidden ;
+}
+.flèchesAgrandissementDroite {
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:0px;
+	width:0px;
+	z-index: 1032;
+	overflow: hidden ;
 }
 
 .grilleAgrandissement {
