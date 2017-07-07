@@ -6,7 +6,9 @@ var grilleAgrandissement = document.querySelector(".grilleAgrandissement");
 var galerie1 = document.querySelectorAll(".galerie-1");
 
 var vingtPourCent = 20 * document.body.clientHeight / 100 ;
-console.log(Math.round(vingtPourCent));
+var quinzePourCent = 15 * document.body.clientHeight / 100 ;
+var widthAgrandissement = 60 * document.body.clientWidth / 100;
+var heightAgrandissement = 60 * document.body.clientHeight / 100;
 
 for ( i = 0 ; i < galerie1.length ; i++ ) { 
     galerie1[i].addEventListener("click", voiler );
@@ -28,19 +30,30 @@ function voiler() {
 	html.style.overflowY = "hidden" ;
 
 	imageTransp.src = this.src ;
-	grilleAgrandissement.style.width = "50%";
-	grilleAgrandissement.style.height = "50%";
+	grilleAgrandissement.style.width = widthAgrandissement.toString() + "px" ;
+	grilleAgrandissement.style.height = heightAgrandissement.toString() + "px"  ;
 
-	var positionGrilleAgrandissement = document.body.scrollTop + vingtPourCent ;
+	if ( this.name && this.name == "renversé"){
+		grilleAgrandissement.style.transform = "rotate(90deg)";
+		var positionGrilleAgrandissement = ( document.body.scrollTop || document.documentElement.scrollTop ) + quinzePourCent ;
+	} else {
+		var positionGrilleAgrandissement = ( document.body.scrollTop || document.documentElement.scrollTop ) + vingtPourCent ;
+	}
+
 	grilleAgrandissement.style.marginTop = positionGrilleAgrandissement.toString() + "px";
 
 }
 
 el.addEventListener("click", function(){
 	el.style.height = "0px";
-	el.style.width = "0%";
+	el.style.width = "0px";
 
 	html.style.overflowY = "visible" ;
+
+	grilleAgrandissement.style.width = "0px" ;
+	grilleAgrandissement.style.height = "0px"  ;
+	grilleAgrandissement.style.marginTop = "0px";
+	grilleAgrandissement.style.transform = "rotate(0deg)";
 
 });
 
