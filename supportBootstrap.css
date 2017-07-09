@@ -24,9 +24,12 @@ ul li span {
 }
 */
 
+.navbar-header{
+	height: 75px;
+}
+
 .navbar-default .navbar-collapse {
 	background-color: #f8f8f8;
-	margin-top: 34px;
 }
 
 /* entête */
@@ -331,8 +334,12 @@ li a:hover:after {
 	cursor :pointer;
 }
 
+
+
 .imageGSens {
 	transform: rotate(90deg);
+	/*margin-top: 30px;
+    margin-bottom: 50px;*/
 }
 
 #transp {

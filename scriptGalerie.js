@@ -6,6 +6,8 @@ var galerie1 = document.querySelectorAll(".galerie-1");
 var flècheGauche = document.querySelector(".flèchesAgrandissementGauche");
 var flècheDroite = document.querySelector(".flèchesAgrandissementDroite");
 
+var galerie ;
+
 var vingtPourCent = 20 * document.body.clientHeight / 100 ;
 var quinzePourCent = 15 * document.body.clientHeight / 100 ;
 var widthAgrandissement = 60 * document.body.clientWidth / 100;
@@ -16,6 +18,10 @@ for ( i = 0 ; i < galerie1.length ; i++ ) {
 }
 
 function voiler() {
+
+	if ( this.title == "Galerie-1" ){
+		galerie = 1 ;
+	}
 
 	var hauteur;
 	
@@ -31,7 +37,8 @@ function voiler() {
 	html.style.overflowY = "hidden" ;
 
 	// imageTransp.src = this.src ;
-	imageTransp.src = "images/ConceptionAZ/" + this.alt.toString() + ".jpg";
+	imageTransp.src = "images/ConceptionAZ/" + this.alt.toString() + ".JPG";
+	imageTransp.name = this.alt.toString() ; 
 	grilleAgrandissement.style.width = widthAgrandissement.toString() + "px" ;
 	grilleAgrandissement.style.height = heightAgrandissement.toString() + "px"  ;
 
@@ -89,5 +96,59 @@ el.addEventListener("click", function(){
 });
 
 
+// pour la couleur de fond des flèches
+flècheDroite.addEventListener("mouseover", function(){ 
+	flècheDroite.querySelector("img").style.backgroundColor = "#353535 ";
+});
+flècheGauche.addEventListener("mouseover", function(){ 
+	flècheGauche.querySelector("img").style.backgroundColor = "#353535 ";
+});
+flècheDroite.addEventListener("mouseout", function(){ 
+	flècheDroite.querySelector("img").style.backgroundColor = "transparent ";
+});
+flècheGauche.addEventListener("mouseout", function(){ 
+	flècheGauche.querySelector("img").style.backgroundColor = "transparent ";
+});
 
+// pour changer de photo dans une galerie
+flècheDroite.addEventListener("click", function(){ 
+	if ( galerie == 1){
+		if ( imageTransp.name == "conceptPhoto1"){
+			imageTransp.src = "images/ConceptionAZ/conceptPhoto2.JPG";
+			imageTransp.name = "conceptPhoto2" ; 
+		} else if ( imageTransp.name == "conceptPhoto2"){
+			imageTransp.src = "images/ConceptionAZ/conceptPhoto3.JPG";
+			imageTransp.name = "conceptPhoto3" ; 
+		} else if ( imageTransp.name == "conceptPhoto3"){
+			imageTransp.src = "images/ConceptionAZ/conceptPhoto4.JPG";
+			imageTransp.name = "conceptPhoto4" ; 
+		} else if ( imageTransp.name == "conceptPhoto4"){
+			imageTransp.src = "images/ConceptionAZ/conceptPhoto5.JPG";
+			imageTransp.name = "conceptPhoto5" ; 
+		} else if ( imageTransp.name == "conceptPhoto5"){
+			imageTransp.src = "images/ConceptionAZ/conceptPhoto1.JPG";
+			imageTransp.name = "conceptPhoto1" ; 
+		}
+	}
+});
+flècheGauche.addEventListener("click", function(){ 
+	if ( galerie == 1){
+		if ( imageTransp.name == "conceptPhoto1"){
+			imageTransp.src = "images/ConceptionAZ/conceptPhoto5.JPG";
+			imageTransp.name = "conceptPhoto5" ; 
+		} else if ( imageTransp.name == "conceptPhoto5"){
+			imageTransp.src = "images/ConceptionAZ/conceptPhoto4.JPG";
+			imageTransp.name = "conceptPhoto4" ; 
+		} else if ( imageTransp.name == "conceptPhoto4"){
+			imageTransp.src = "images/ConceptionAZ/conceptPhoto3.JPG";
+			imageTransp.name = "conceptPhoto3" ; 
+		} else if ( imageTransp.name == "conceptPhoto3"){
+			imageTransp.src = "images/ConceptionAZ/conceptPhoto2.JPG";
+			imageTransp.name = "conceptPhoto2" ; 
+		} else if ( imageTransp.name == "conceptPhoto2"){
+			imageTransp.src = "images/ConceptionAZ/conceptPhoto1.JPG";
+			imageTransp.name = "conceptPhoto1" ; 
+		}
+	}
+});
 
